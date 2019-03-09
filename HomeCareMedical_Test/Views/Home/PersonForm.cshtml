@@ -1,0 +1,47 @@
+﻿@model HomeCareMedical_Test.Models.Personal
+@{
+    /**/
+
+    ViewBag.Title = "Add a person to Database";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add a person to database</h2>
+@Html.ActionLink("Back", "Index", "Home", null, new { @class = "btn btn-info" })
+
+@using (Html.BeginForm("CreateNewRecord", "Home"))
+{
+    <div class="form-group">
+        @Html.LabelFor(person => person.FirstName)
+        @Html.TextBoxFor(person => person.FirstName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(person => person.FirstName)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(person => person.MiddleName)
+        @Html.TextBoxFor(person => person.MiddleName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(person => person.MiddleName)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(person => person.SurName)
+        @Html.TextBoxFor(person => person.SurName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(person => person.SurName)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(person => person.DateOfBirth)
+        @Html.TextBoxFor(person => person.DateOfBirth, new { @class = "form-control" })
+        @Html.ValidationMessageFor(person => person.DateOfBirth)
+    </div>
+    @Html.AntiForgeryToken();
+    <button type="submit" class="btn btn-primary">Add</button>
+    <button type="reset" class="btn btn-group">Clear</button>
+    <p style="font-weight:normal;margin:20px 0;">
+        @Html.Label("", Convert.ToString((string)ViewBag.DuplicateError), new { @class = "field-validation-error" })
+        @Html.Label("", Convert.ToString((string)ViewBag.SuccessMessage), new { @class = "field-validation-success" })
+    </p>
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

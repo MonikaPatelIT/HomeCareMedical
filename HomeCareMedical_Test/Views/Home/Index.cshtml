@@ -1,0 +1,64 @@
+﻿@model IEnumerable<HomeCareMedical_Test.Models.Personal>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+    <div class="row" style="margin:20px 0;">
+        <div class="col-md-6" >
+            @using (Html.BeginForm("Index", "Home",FormMethod.Get))
+            {
+               @* <input type="text" class="input-lg" placeholder="Search by name..." id="searchText" />*@
+                @Html.TextBox("searchText", "",  new { @class="input-lg", @placeholder="Search by name..." })
+                <button type="submit" class="btn btn-group-lg">Find</button>
+            }
+            </div>
+        <div class="col-md-6 text-right">
+
+            @Html.ActionLink("Add a person to Database", "PersonForm", "Home", null, new { @class = "btn btn-primary" })
+            
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col-md-12">
+            @if (!Model.Any())
+            {
+                <p>There are no records.</p>
+            }
+            else
+            {
+                <table class="table">
+                    <thead>
+                        <tr style="background-color:aliceblue">
+                            <th>First name</th>
+                            <th>Surname</th>
+                            <th>Age(years)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var person in Model)
+                        {
+                            <tr>
+                                <td>@person.FirstName</td>
+                                <td>@person.SurName</td>
+                                <td>
+                                    @person.Age
+                                </td>
+                            </tr>
+
+                        }
+                        <tr style="background-color:aliceblue">
+                            <td colspan="3">
+                                Total records : @Model.Count()
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            }
+        </div>
+    </div>
+
+
+
+
+
