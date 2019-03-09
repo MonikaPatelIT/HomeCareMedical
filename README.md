@@ -41,8 +41,15 @@ The web pages, tables and inputs can have any visual style you see fit.
  
 
  
- ##Finished Project 
-###First Page Display
+ ## Finished Project 
+### First Page Display
 ![image](https://user-images.githubusercontent.com/9668906/54071610-c3adf100-42d3-11e9-8b2b-98c3ec9a01bf.png)
 ### First Page Search
 ![image](https://user-images.githubusercontent.com/9668906/54071628-0c65aa00-42d4-11e9-8847-541277be3671.png)
+
+### Second Page Add Form
+![image](https://user-images.githubusercontent.com/9668906/54071669-cb21ca00-42d4-11e9-9e67-cbc876de5e24.png)
+![image](https://user-images.githubusercontent.com/9668906/54071675-eb518900-42d4-11e9-844a-a36f92335b96.png)
+![image](https://user-images.githubusercontent.com/9668906/54071681-189e3700-42d5-11e9-964e-a13128bcbecf.png)
+![image](https://user-images.githubusercontent.com/9668906/54071690-408d9a80-42d5-11e9-9554-3151d595dd11.png)
+
